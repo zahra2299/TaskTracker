@@ -1,16 +1,13 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:provider/provider.dart';
 import 'package:todo/layout/home_layout.dart';
 import 'package:todo/providers/my_provider.dart';
 import 'package:todo/providers/settings_provider.dart';
 import 'package:todo/screens/login/login.dart';
-import 'package:todo/screens/splash/splash_screen.dart';
-import 'package:todo/screens/tasks/edit_task_screen.dart';
 import 'package:todo/shared/styles/theming.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+
 import 'firebase_options.dart';
 
 void main() async {
@@ -49,8 +46,6 @@ class MyApp extends StatelessWidget {
       routes: {
         HomeLayout.routeName: (context) => HomeLayout(),
         LoginScreen.routeName: (context) => LoginScreen(),
-        EditTaskScreen.routeName: (context) => EditTaskScreen(),
-        SplashScreen.routeName: (context) => SplashScreen(),
       },
       themeMode: pro.theme,
       theme: MyThemeData.lightTheme,

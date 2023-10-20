@@ -11,7 +11,7 @@ class ThemeBottomSheet extends StatelessWidget {
   Widget build(BuildContext context) {
     var pro = Provider.of<SettingsProvider>(context);
     return Padding(
-      padding: const EdgeInsets.all(18.0),
+      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 40),
       child: Column(
         children: [
           InkWell(
@@ -39,6 +39,9 @@ class ThemeBottomSheet extends StatelessWidget {
                     : SizedBox(),
               ],
             ),
+          ),
+          SizedBox(
+            height: 20,
           ),
           InkWell(
             onTap: () {

@@ -28,5 +28,6 @@
   "addTask": "إضافة ",
   "delete": "حذف",
   "edit": "تعديل",
-  "editTask": "تعديل"
+  "editTask": "تعديل",
+  "saveChanges": "إضافة"
 }

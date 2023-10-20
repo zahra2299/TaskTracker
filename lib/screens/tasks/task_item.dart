@@ -37,7 +37,11 @@ class TaskItem extends StatelessWidget {
           ),
           SlidableAction(
             onPressed: (BuildContext context) {
-              Navigator.pushNamed(context, EditTaskScreen.routeName);
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => EditTaskScreen(task: task),
+                  ));
             },
             icon: Icons.edit,
             backgroundColor: Colors.blue,

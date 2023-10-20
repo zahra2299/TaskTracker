@@ -104,7 +104,7 @@ class _AddTaskBottomSheetState extends State<AddTaskBottomSheet> {
                     description: descriptionController.text,
                     //to get the date only without the time
                     date: DateUtils.dateOnly(selectedDate)
-                        .microsecondsSinceEpoch);
+                        .millisecondsSinceEpoch);
                 FirebaseManager.addTask(task);
                 showDialog(
                   context: context,
@@ -134,10 +134,23 @@ class _AddTaskBottomSheetState extends State<AddTaskBottomSheet> {
 
   selectDate() async {
     DateTime? chosenDate = await showDatePicker(
-        context: context,
-        initialDate: selectedDate,
-        firstDate: DateTime.now(),
-        lastDate: DateTime.now().add(Duration(days: 365)));
+      context: context,
+      initialDate: selectedDate,
+      firstDate: DateTime.now(),
+      lastDate: DateTime.now().add(Duration(days: 365)),
+      builder: (context, child) {
+        return Theme(
+            data: ThemeData.light().copyWith(
+              colorScheme: ColorScheme.light(
+                primary: Colors.blue,
+                onPrimary: Colors.white,
+                onSecondary: Colors.grey,
+                onSurface: Colors.black87,
+              ),
+            ),
+            child: child!);
+      },
+    );
     if (chosenDate == null) {
       return;
     }

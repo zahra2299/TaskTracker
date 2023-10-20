@@ -37,7 +37,7 @@ class FirebaseManager {
     return getTasksCollection()
         .where("userId", isEqualTo: FirebaseAuth.instance.currentUser!.uid)
         .where("date",
-            isEqualTo: DateUtils.dateOnly(date).microsecondsSinceEpoch)
+            isEqualTo: DateUtils.dateOnly(date).millisecondsSinceEpoch)
         .snapshots();
   }
 
@@ -79,11 +79,6 @@ class FirebaseManager {
       final credential = await FirebaseAuth.instance
           .signInWithEmailAndPassword(email: email, password: password);
       onSuccess();
-      // if (credential.user!.emailVerified) {
-      //   onSuccess();
-      // } else {
-      //   onError("Please verify your mail");
-      // }
     } on FirebaseAuthException catch (e) {
       if (e.code == "INVALID_LOGIN_CREDENTIALS") {
         onError("Wrong Mail or Password");

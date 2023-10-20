@@ -28,5 +28,6 @@
   "addTask": "Add task",
   "delete": "Delete",
   "edit": "Edit",
-  "editTask": "Edit Task"
+  "editTask": "Edit Task",
+  "saveChanges": "Save Changes"
 }
